@@ -17,6 +17,11 @@
   margin: 0 auto;
 }
 
+header {
+  position: sticky;
+  box-shadow: 0 0px 70px -30px var(--Primary);
+}
+
 nav {
   background-color: #141414;
 }
@@ -86,6 +91,18 @@ nav .btns h5 {
   color: var(--MainColor);
   cursor: pointer;
 }
+nav .hamburger {
+  display: none;
+}
+nav .hamburger i {
+  color: var(--MainColor);
+  font-size: 17px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+nav .hamburger i:hover {
+  color: var(--Primary);
+}
 
 .hero {
   background-image: url(../imgs/heroBg.png);
@@ -100,7 +117,7 @@ nav .btns h5 {
 }
 .hero .btns {
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 .hero .btns .btn {
   width: 25px;
@@ -112,7 +129,7 @@ nav .btns h5 {
   border: 2px solid rgba(255, 255, 255, 0.5019607843);
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 .hero .btns .btn:hover {
   border-color: var(--Primary);
@@ -130,7 +147,7 @@ nav .btns h5 {
   font-size: 40px;
   line-height: 100%;
   color: var(--MainColor);
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 .hero p {
   font-weight: 500;
@@ -138,7 +155,7 @@ nav .btns h5 {
   line-height: 100%;
   color: var(--MainColor);
   width: 40%;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 .hero button {
   position: relative;
@@ -152,7 +169,7 @@ nav .btns h5 {
   padding: 10px 30px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 .hero button::after {
   content: " ";
@@ -200,6 +217,235 @@ nav .btns h5 {
   animation-delay: 1.3s;
 }
 
+.about {
+  position: relative;
+  background-color: #141414;
+}
+.about .container {
+  padding: 50px 0;
+  padding-bottom: 70px;
+}
+.about h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: var(--MainColor);
+  position: relative;
+  display: inline;
+}
+.about h2 img {
+  position: absolute;
+  top: -10px;
+  right: -20px;
+}
+.about .card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  gap: 40px;
+  margin-top: 30px;
+}
+.about p {
+  width: 80%;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 140%;
+  color: var(--MainColor);
+  margin-bottom: 20px;
+}
+.about button {
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--MainColor);
+  background-color: #5a2d0e;
+  border: 1px solid var(--Primary);
+  padding: 10px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.about button::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  z-index: 1;
+  background-color: var(--btnHover);
+  transition: all 0.3s ease-in-out;
+}
+.about button:hover::after {
+  width: 100%;
+}
+.about button span {
+  position: relative;
+  z-index: 2;
+}
+.about .imgs {
+  overflow: hidden;
+  width: 100%;
+}
+.about .imgs img {
+  transition: all 0.3s ease-in-out;
+  display: block;
+  width: 100%;
+}
+.about .imgs:hover img {
+  transform: scale(1.05);
+}
+.about .liner {
+  position: absolute;
+  bottom: 20px;
+  width: 70%;
+  height: 2px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.0784313725), #ff6600);
+  box-shadow: 0px 0px 20px 5px rgba(255, 102, 0, 0.1490196078);
+  position: relative;
+}
+.about .liner .point {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--Primary);
+  position: absolute;
+  top: -2.5px;
+  right: -3px;
+}
+
+.values {
+  position: relative;
+  background-color: #141414;
+}
+.values .container {
+  padding: 50px 0;
+  padding-bottom: 70px;
+}
+.values h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: var(--MainColor);
+  position: relative;
+  display: inline;
+}
+.values h2 img {
+  position: absolute;
+  top: -10px;
+  right: -20px;
+}
+.values .card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+.values .card .box {
+  display: flex;
+  width: 80%;
+}
+.values .card .box .imgs {
+  margin-left: -55px;
+}
+.values .card .box .text {
+  margin-top: 50px;
+  margin-left: -30px;
+}
+.values .card .box h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: var(--MainColor);
+  position: relative;
+  display: inline;
+}
+.values .card .box h2 img {
+  position: absolute;
+  top: -10px;
+  right: -20px;
+}
+.values .card .box p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.5019607843);
+  margin-top: 20px;
+}
+.values .liner {
+  position: absolute;
+  margin-left: 30%;
+  bottom: 20px;
+  right: 0;
+  width: 70%;
+  height: 2px;
+  background: linear-gradient(to right, #ff6600, rgba(0, 0, 0, 0.0784313725));
+  box-shadow: 0px 0px 20px 5px rgba(255, 102, 0, 0.1490196078);
+  position: relative;
+}
+.values .liner .point {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--Primary);
+  position: absolute;
+  top: -3.5px;
+  left: -3px;
+}
+
+.team {
+  background-color: #141414;
+}
+.team .container {
+  padding: 50px 0;
+  padding-bottom: 70px;
+}
+.team h2 {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: var(--MainColor);
+  position: relative;
+  display: inline;
+}
+.team h2 img {
+  position: absolute;
+  top: -10px;
+  right: -20px;
+}
+.team p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 140%;
+  color: rgba(255, 255, 255, 0.5019607843);
+  margin-top: 20px;
+  width: 70%;
+}
+.team .card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+.team .box {
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+}
+.team .box .imgs {
+  margin-bottom: 10px;
+}
+.team .box h3 {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 100%;
+  color: var(--MainColor);
+  margin-bottom: 10px;
+}
+.team .box:hover {
+  transform: translateY(-5px);
+}
+
 @keyframes animate1 {
   0% {
     transform: scale(0.8);
@@ -211,5 +457,51 @@ nav .btns h5 {
   }
   100% {
     transform: scale(0.8);
+  }
+}
+@media (max-width: 767px) {
+  nav .container {
+    padding: 20px;
+  }
+  nav ul {
+    display: none;
+  }
+  nav .btns {
+    display: none;
+  }
+  nav .hamburger {
+    display: block;
+  }
+  .hero .container {
+    padding: 50px 20px;
+  }
+  .hero h1 {
+    font-size: 32px;
+  }
+  .hero p {
+    font-size: 14px;
+    width: 100%;
+    line-height: 120%;
+  }
+  .about .container {
+    padding: 50px 20px;
+  }
+  .about .card {
+    flex-direction: column;
+  }
+  .about .imgs {
+    width: 70%;
+  }
+  .about p {
+    font-size: 12px;
+  }
+  .values .container {
+    padding: 50px 20px;
+  }
+  .values .card {
+    grid-template-columns: 1fr;
+  }
+  .values .card .box {
+    width: 90%;
   }
 }/*# sourceMappingURL=main.css.map */

@@ -6,6 +6,50 @@
   align-items: center;
   gap: 20px;
 }
+@mixin btn-still() {
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--MainColor);
+  background-color: #5a2d0e;
+  border: 1px solid var(--Primary);
+  padding: 10px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    z-index: 1;
+    background-color: var(--btnHover);
+    transition: all 0.3s ease-in-out;
+  }
+  &:hover::after {
+    width: 100%;
+  }
+  span {
+    position: relative;
+    z-index: 2;
+  }
+}
+@mixin h2() {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 100%;
+  color: var(--MainColor);
+  position: relative;
+  display: inline;
+  img {
+    position: absolute;
+    top: -10px;
+    right: -20px;
+  }
+}
 
 * {
   padding: 0;
@@ -21,6 +65,10 @@
 .container {
   max-width: 1200px;
   margin: 0 auto;
+}
+header {
+  position: sticky;
+  box-shadow: 0 0px 70px -30px var(--Primary);
 }
 nav {
   background-color: #141414;
@@ -49,35 +97,7 @@ nav {
     align-items: center;
     gap: 20px;
     button {
-      position: relative;
-      overflow: hidden;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 100%;
-      color: var(--MainColor);
-      background-color: #5a2d0e;
-      border: 1px solid var(--Primary);
-      padding: 10px 30px;
-      cursor: pointer;
-      transition: all 0.3s ease-in-out;
-      &::after {
-        content: " ";
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 0;
-        z-index: 1;
-        background-color: var(--btnHover);
-        transition: all 0.3s ease-in-out;
-      }
-      &:hover::after {
-        width: 100%;
-      }
-      span {
-        position: relative;
-        z-index: 2;
-      }
+      @include btn-still();
     }
     h5 {
       font: 500px;
@@ -85,6 +105,18 @@ nav {
       line-height: 100%;
       color: var(--MainColor);
       cursor: pointer;
+    }
+  }
+  .hamburger {
+    display: none;
+    i {
+      color: var(--MainColor);
+      font-size: 17px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color: var(--Primary);
+      }
     }
   }
 }
@@ -100,7 +132,7 @@ nav {
   }
   .btns {
     display: flex;
-    gap: 20px;
+    gap: 30px;
     .btn {
       width: 25px;
       height: 25px;
@@ -111,7 +143,7 @@ nav {
       border: 2px solid #ffffff80;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
-      margin-bottom: 30px;
+      margin-bottom: 40px;
       &:hover {
         border-color: var(--Primary);
       }
@@ -130,7 +162,7 @@ nav {
     font-size: 40px;
     line-height: 100%;
     color: var(--MainColor);
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
   p {
     font-weight: 500;
@@ -138,39 +170,11 @@ nav {
     line-height: 100%;
     color: var(--MainColor);
     width: 40%;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
   }
   button {
-    position: relative;
-    overflow: hidden;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 100%;
-    color: var(--MainColor);
-    background-color: #5a2d0e;
-    border: 1px solid var(--Primary);
-    padding: 10px 30px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    margin-bottom: 30px;
-    &::after {
-      content: " ";
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 0;
-      z-index: 1;
-      background-color: var(--btnHover);
-      transition: all 0.3s ease-in-out;
-    }
-    &:hover::after {
-      width: 100%;
-    }
-    span {
-      position: relative;
-      z-index: 2;
-    }
+    @include btn-still();
+    margin-bottom: 40px;
   }
   .loading {
     @include flex();
@@ -197,6 +201,161 @@ nav {
     }
   }
 }
+.about {
+  position: relative;
+  background-color: #141414;
+  .container {
+    padding: 50px 0;
+    padding-bottom: 70px;
+  }
+  h2 {
+    @include h2();
+  }
+  .card {
+    @include flex();
+    gap: 40px;
+    margin-top: 30px;
+  }
+  p {
+    width: 80%;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 140%;
+    color: var(--MainColor);
+    margin-bottom: 20px;
+  }
+  button {
+    @include btn-still();
+  }
+  .imgs {
+    overflow: hidden;
+    width: 100%;
+    img {
+      transition: all 0.3s ease-in-out;
+      display: block;
+      width: 100%;
+    }
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
+  .liner {
+    position: absolute;
+    bottom: 20px;
+    width: 70%;
+    height: 2px;
+    background: linear-gradient(to right, #00000014, #ff6600);
+    box-shadow: 0px 0px 20px 5px #ff660026;
+    position: relative;
+    .point {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--Primary);
+      position: absolute;
+      top: -2.5px;
+      right: -3px;
+    }
+  }
+}
+.values {
+  position: relative;
+  background-color: #141414;
+  .container {
+    padding: 50px 0;
+    padding-bottom: 70px;
+  }
+  h2 {
+    @include h2();
+  }
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    .box {
+      display: flex;
+      width: 80%;
+      .imgs {
+        margin-left: -55px;
+      }
+      .text {
+        margin-top: 50px;
+        margin-left: -30px;
+      }
+      h2 {
+        @include h2();
+      }
+      p {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 140%;
+        color: #ffffff80;
+        margin-top: 20px;
+      }
+    }
+  }
+  .liner {
+    position: absolute;
+    margin-left: 30%;
+    bottom: 20px;
+    right: 0;
+    width: 70%;
+    height: 2px;
+    background: linear-gradient(to right, #ff6600, #00000014);
+    box-shadow: 0px 0px 20px 5px #ff660026;
+    position: relative;
+    .point {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--Primary);
+      position: absolute;
+      top: -3.5px;
+      left: -3px;
+    }
+  }
+}
+.team {
+  background-color: #141414;
+  .container {
+    padding: 50px 0;
+    padding-bottom: 70px;
+  }
+  h2 {
+    @include h2();
+  }
+  p {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 140%;
+    color: #ffffff80;
+    margin-top: 20px;
+    width: 70%;
+  }
+  .card {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+  }
+  .box{
+    transition: all 0.3s ease-in-out;
+    .imgs{
+        margin-bottom: 10px;
+    }
+    text-align: center;
+    h3{
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 100%;
+        color: var(--MainColor);
+        margin-bottom: 10px;
+    }
+    &:hover{
+        transform: translateY(-5px);
+    }
+  }
+}
 
 @keyframes animate1 {
   0% {
@@ -209,5 +368,60 @@ nav {
   }
   100% {
     transform: scale(0.8);
+  }
+}
+
+@media (max-width: 767px) {
+  nav {
+    .container {
+      padding: 20px;
+    }
+    ul {
+      display: none;
+    }
+    .btns {
+      display: none;
+    }
+    .hamburger {
+      display: block;
+    }
+  }
+  .hero {
+    .container {
+      padding: 50px 20px;
+    }
+    h1 {
+      font-size: 32px;
+    }
+    p {
+      font-size: 14px;
+      width: 100%;
+      line-height: 120%;
+    }
+  }
+  .about {
+    .container {
+      padding: 50px 20px;
+    }
+    .card {
+      flex-direction: column;
+    }
+    .imgs {
+      width: 70%;
+    }
+    p {
+      font-size: 12px;
+    }
+  }
+  .values {
+    .container {
+      padding: 50px 20px;
+    }
+    .card {
+      grid-template-columns: 1fr;
+      .box {
+        width: 90%;
+      }
+    }
   }
 }
