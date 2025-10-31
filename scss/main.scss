@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+@mixin flex() {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+:root {
+  --MainColor: #ffffff;
+  --Primary: #ff6600;
+  --btnHover: #3e1f09;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+nav {
+  background-color: #141414;
+  .container {
+    padding: 20px 0;
+    @include flex();
+  }
+  ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    a {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 100%;
+      color: var(--MainColor);
+      text-decoration: none;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        color: var(--Primary);
+      }
+    }
+  }
+  .btns {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    button {
+      position: relative;
+      overflow: hidden;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 100%;
+      color: var(--MainColor);
+      background-color: #5a2d0e;
+      border: 1px solid var(--Primary);
+      padding: 10px 30px;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      &::after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 0;
+        z-index: 1;
+        background-color: var(--btnHover);
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+      span {
+        position: relative;
+        z-index: 2;
+      }
+    }
+    h5 {
+      font: 500px;
+      font-size: 14px;
+      line-height: 100%;
+      color: var(--MainColor);
+      cursor: pointer;
+    }
+  }
+}
+.hero {
+  background-image: url(../imgs/heroBg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 85vh;
+  background-color: #141414;
+  .container {
+    padding: 50px 0;
+  }
+  .btns {
+    display: flex;
+    gap: 20px;
+    .btn {
+      width: 25px;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      border: 2px solid #ffffff80;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      margin-bottom: 30px;
+      &:hover {
+        border-color: var(--Primary);
+      }
+      &:hover i {
+        color: var(--Primary);
+      }
+    }
+    i {
+      font-size: 15px;
+      color: #ffffff80;
+      transition: all 0.3s ease-in-out;
+    }
+  }
+  h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 100%;
+    color: var(--MainColor);
+    margin-bottom: 30px;
+  }
+  p {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 100%;
+    color: var(--MainColor);
+    width: 40%;
+    margin-bottom: 30px;
+  }
+  button {
+    position: relative;
+    overflow: hidden;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    color: var(--MainColor);
+    background-color: #5a2d0e;
+    border: 1px solid var(--Primary);
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 30px;
+    &::after {
+      content: " ";
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0;
+      z-index: 1;
+      background-color: var(--btnHover);
+      transition: all 0.3s ease-in-out;
+    }
+    &:hover::after {
+      width: 100%;
+    }
+    span {
+      position: relative;
+      z-index: 2;
+    }
+  }
+  .loading {
+    @include flex();
+    justify-content: start;
+    gap: 20px;
+    .point {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #ffffff40;
+      animation: animate1 2s infinite linear;
+      &:nth-child(1) {
+        animation-delay: 0;
+      }
+      &:nth-child(2) {
+        animation-delay: 0.4s;
+      }
+      &:nth-child(3) {
+        animation-delay: 1s;
+      }
+      &:nth-child(4) {
+        animation-delay: 1.3s;
+      }
+    }
+  }
+}
+
+@keyframes animate1 {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+    background-color: var(--Primary);
+    box-shadow: 0px 0px 20px 0px #ff6600d9;
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}

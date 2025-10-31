@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+:root {
+  --MainColor: #ffffff;
+  --Primary: #ff6600;
+  --btnHover: #3e1f09;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+nav {
+  background-color: #141414;
+}
+nav .container {
+  padding: 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+nav ul a {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--MainColor);
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+nav ul a:hover {
+  color: var(--Primary);
+}
+nav .btns {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+nav .btns button {
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--MainColor);
+  background-color: #5a2d0e;
+  border: 1px solid var(--Primary);
+  padding: 10px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+nav .btns button::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  z-index: 1;
+  background-color: var(--btnHover);
+  transition: all 0.3s ease-in-out;
+}
+nav .btns button:hover::after {
+  width: 100%;
+}
+nav .btns button span {
+  position: relative;
+  z-index: 2;
+}
+nav .btns h5 {
+  font: 500px;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--MainColor);
+  cursor: pointer;
+}
+
+.hero {
+  background-image: url(../imgs/heroBg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 85vh;
+  background-color: #141414;
+}
+.hero .container {
+  padding: 50px 0;
+}
+.hero .btns {
+  display: flex;
+  gap: 20px;
+}
+.hero .btns .btn {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: 2px solid rgba(255, 255, 255, 0.5019607843);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 30px;
+}
+.hero .btns .btn:hover {
+  border-color: var(--Primary);
+}
+.hero .btns .btn:hover i {
+  color: var(--Primary);
+}
+.hero .btns i {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.5019607843);
+  transition: all 0.3s ease-in-out;
+}
+.hero h1 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 100%;
+  color: var(--MainColor);
+  margin-bottom: 30px;
+}
+.hero p {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 100%;
+  color: var(--MainColor);
+  width: 40%;
+  margin-bottom: 30px;
+}
+.hero button {
+  position: relative;
+  overflow: hidden;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 100%;
+  color: var(--MainColor);
+  background-color: #5a2d0e;
+  border: 1px solid var(--Primary);
+  padding: 10px 30px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  margin-bottom: 30px;
+}
+.hero button::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  z-index: 1;
+  background-color: var(--btnHover);
+  transition: all 0.3s ease-in-out;
+}
+.hero button:hover::after {
+  width: 100%;
+}
+.hero button span {
+  position: relative;
+  z-index: 2;
+}
+.hero .loading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  justify-content: start;
+  gap: 20px;
+}
+.hero .loading .point {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2509803922);
+  animation: animate1 2s infinite linear;
+}
+.hero .loading .point:nth-child(1) {
+  animation-delay: 0;
+}
+.hero .loading .point:nth-child(2) {
+  animation-delay: 0.4s;
+}
+.hero .loading .point:nth-child(3) {
+  animation-delay: 1s;
+}
+.hero .loading .point:nth-child(4) {
+  animation-delay: 1.3s;
+}
+
+@keyframes animate1 {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1);
+    background-color: var(--Primary);
+    box-shadow: 0px 0px 20px 0px rgba(255, 102, 0, 0.8509803922);
+  }
+  100% {
+    transform: scale(0.8);
+  }
+}/*# sourceMappingURL=main.css.map */
