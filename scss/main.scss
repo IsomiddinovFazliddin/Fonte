@@ -338,23 +338,265 @@ nav {
     gap: 30px;
     margin-top: 40px;
   }
-  .box{
+  .box {
     transition: all 0.3s ease-in-out;
-    .imgs{
-        margin-bottom: 10px;
+    .imgs {
+      margin-bottom: 10px;
     }
     text-align: center;
-    h3{
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 100%;
-        color: var(--MainColor);
-        margin-bottom: 10px;
+    h3 {
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 100%;
+      color: var(--MainColor);
+      margin-bottom: 10px;
     }
-    &:hover{
-        transform: translateY(-5px);
+    &:hover {
+      transform: translateY(-5px);
     }
   }
+  .liner {
+    position: absolute;
+    bottom: 20px;
+    width: 95%;
+    height: 2px;
+    background: linear-gradient(to right, #00000014, #ff6600);
+    box-shadow: 0px 0px 20px 5px #ff660026;
+    position: relative;
+    .point {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--Primary);
+      position: absolute;
+      top: -2.5px;
+      right: -3px;
+    }
+  }
+}
+.blog {
+  background-color: #141414;
+  .container {
+    padding: 50px 0;
+  }
+  h2 {
+    @include h2();
+  }
+  .btn {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ffffff80;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    i {
+      color: #ffffff80;
+      transition: all 0.3s ease-in-out;
+    }
+    &:hover {
+      border-color: var(--Primary);
+    }
+    &:hover i {
+      color: var(--Primary);
+    }
+  }
+  .card {
+    margin-top: 40px;
+    @include flex();
+  }
+  .box {
+    width: 30%;
+    .imgs {
+      overflow: hidden;
+      img {
+        width: 100%;
+        transition: all 0.3s ease-in-out;
+        display: block;
+      }
+      &:hover img {
+        transform: scale(1.05);
+      }
+    }
+    .text {
+      height: 100px;
+      position: relative;
+      h3 {
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 100%;
+        color: var(--MainColor);
+        margin-top: 20px;
+      }
+      h5 {
+        position: relative;
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 100%;
+        color: var(--Primary);
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+        &::after {
+          content: " ";
+          position: absolute;
+          left: 0;
+          bottom: -5px;
+          height: 2px;
+          width: 0;
+          background-color: var(--Primary);
+          transition: all 0.3s ease-in-out;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .col {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    .content {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      span {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 100%;
+        color: #524f4f;
+        &:nth-child(3) {
+          font-size: 24px;
+          color: var(--Primary);
+          filter: drop-shadow(1px 1px 20px #ff6600);
+          background-color: transparent;
+        }
+      }
+    }
+  }
+}
+.contact {
+  background-color: #0a0a0a;
+  .container {
+    padding: 0;
+    @include flex();
+    justify-content: space-around;
+    gap: 20px;
+  }
+  form {
+    width: 50%;
+    input {
+      font-weight: 600;
+      font-size: 12px;
+      line-height: 100%;
+      color: var(--MainColor);
+      background-color: #141414;
+      padding: 10px;
+      border: 1px solid #141414;
+      transition: all 0.2s ease-in-out;
+      //   outline: none;
+      &:focus {
+        border-color: var(--Primary);
+        outline: var(--Primary);
+        background-color: #221309;
+      }
+    }
+    .int1 {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .inputBtn {
+      margin-bottom: 10px;
+      display: flex;
+      gap: 10px;
+      .int2 {
+        width: 50%;
+      }
+      .int3 {
+        width: 50%;
+      }
+    }
+    textarea {
+      width: 100%;
+      background-color: #141414;
+      padding: 10px;
+      border: 1px solid #141414;
+      outline: none;
+      height: 150px;
+      transition: all 0.2s ease-in-out;
+      &:focus {
+        border-color: var(--Primary);
+        outline: var(--Primary);
+        background-color: #221309;
+      }
+    }
+    .btn {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+      button {
+        @include btn-still();
+        box-shadow: 0px 0px 60px 0px #ff660073;
+      }
+    }
+  }
+  .imgs {
+    width: 30%;
+    img {
+      width: 100%;
+    }
+  }
+}
+footer{
+    background-color: #141414;
+    .container{
+        padding: 50px 0;
+        @include flex();
+        align-items: start;
+    }
+    .card{
+        display: flex;
+        gap: 40px;
+        h5{
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 100%;
+            color: #898989;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            &:hover{
+                color: var(--MainColor);
+            }
+        }
+    }
+    .icons{
+        display: flex;
+        gap: 20px;
+        .icon{
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #080808;
+            cursor: pointer;
+            transition: all .3s ease-in-out;
+            i{
+                color: #898989;
+                font-size: 20px;
+            }
+            &:hover{
+                transform: scale(0.95);
+            }
+        }
+    }
 }
 
 @keyframes animate1 {
@@ -424,9 +666,62 @@ nav {
       }
     }
   }
-  .team{
+  .team {
+    .container {
+      padding: 50px 20px;
+    }
+  }
+  .blog {
+    .container {
+      padding: 50px 20px;
+    }
+    .box {
+      width: 70%;
+      .text {
+        h3 {
+          font-size: 16px;
+        }
+      }
+      &:nth-child(3) {
+        display: none;
+      }
+      &:nth-child(4) {
+        display: none;
+      }
+    }
+  }
+  .contact {
+    .container {
+      padding: 20px 0;
+      flex-direction: column;
+    }
+    form {
+      width: 90%;
+      .inputBtn {
+        flex-direction: column;
+        .int2 {
+          width: 100%;
+        }
+        .int3 {
+          width: 100%;
+        }
+      }
+    }
+    .imgs {
+      width: 100%;
+      height: 300px;
+      img {
+        height: 100%;
+      }
+    }
+  }
+  footer{
     .container{
         padding: 50px 20px;
+        flex-wrap: wrap;
+    }
+    .card{
+        flex-wrap: wrap;
     }
   }
 }
